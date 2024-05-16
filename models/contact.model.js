@@ -19,29 +19,29 @@ const ContactSchema = mongoose.Schema(
     
         phone: {
         type: Number,
-        required: true,
+        required: false,
         },
 
         address: {
             street: {
                 type: String,
-                required: true,
+                required: false,
             },
             streetnumber: { 
                 type: Number,
-                required: true,
+                required: false,
             },
             city: {
                 type: String,
-                required: true,
+                required: false,
             },
             zip: {
                 type: Number,
-                required: true,
+                required: false,
             },
             country: {
                 type: String,
-                required: true,
+                required: false,
             },
         },
     },
@@ -49,3 +49,7 @@ const ContactSchema = mongoose.Schema(
         timestamps: true,
     }
 );
+
+const Contact = mongoose.model("Contact", ContactSchema);
+
+module.exports = Contact;

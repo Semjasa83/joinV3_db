@@ -1,11 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const Product = require("./models/product.model");
-const Contact = require("./models/contact.model");
-const productRoutes = require("./routes/product.route");
+const productRoutes = require("./routes/product.route.js");
+const contactRoutes = require("./routes/contact.route.js");
 const app = express();
 
+// definition of the routes
 app.use("/api/products", productRoutes);
+app.use("/api/contacts", contactRoutes);
 
 // Middleware to handle JSON requests and URLendcoded requests
 app.use(express.json());
