@@ -4,13 +4,15 @@ const productRoutes = require("./routes/product.route.js");
 const contactRoutes = require("./routes/contact.route.js");
 const app = express();
 
-// definition of the routes
-app.use("/api/products", productRoutes);
-app.use("/api/contacts", contactRoutes);
 
 // Middleware to handle JSON requests and URLendcoded requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+
+// definition of the routes
+app.use("/api/products", productRoutes);
+app.use("/api/contacts", contactRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello from Node API updated");
