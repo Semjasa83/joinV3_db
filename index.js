@@ -2,13 +2,15 @@ const express = require("express");
 const mongoose = require("mongoose");
 const productRoutes = require("./routes/product.route.js");
 const contactRoutes = require("./routes/contact.route.js");
+const cors = require("cors");
 const app = express();
 
+// Middleware to handle CORS
+app.use(cors());
 
 // Middleware to handle JSON requests and URLendcoded requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
 
 // definition of the routes
 app.use("/api/products", productRoutes);
@@ -17,6 +19,13 @@ app.use("/api/contacts", contactRoutes);
 app.get("/", (req, res) => {
   res.send("Hello from Node API updated");
 });
+
+const corsOptions = {
+  origin: 'localhost:4200',
+  optionsSuccessStatus: 200,
+}
+
+app.use(cors(corsOptions));
 
 mongoose
   .connect(
