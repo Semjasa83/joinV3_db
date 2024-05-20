@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 const ContactSchema = mongoose.Schema(
     {
-        firstname: {
+        firstName: {
         type: String,
         required: true,
         },
 
-        lastname: {
+        lastName: {
         type: String,
         required: true,
         },
@@ -32,7 +32,7 @@ const ContactSchema = mongoose.Schema(
                 type: String,
                 required: false,
             },
-            streetnumber: { 
+            streetNumber: {
                 type: Number,
                 required: false,
             },
