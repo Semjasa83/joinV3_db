@@ -53,6 +53,10 @@ const ContactSchema = mongoose.Schema(
             type: String,
             required: false,
         },
+        id: {
+            type: String,
+            required: false,
+        }
     },
     {
         timestamps: true,
