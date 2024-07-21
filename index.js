@@ -5,12 +5,13 @@ const productRoutes = require("./routes/product.route.js");
 const contactRoutes = require("./routes/contact.route.js");
 const cors = require("cors");
 const app = express();
-const corsOptions = {
-  origin: 'localhost:4200',
-  optionsSuccessStatus: 200,
-}
+
 
 // Middleware to handle CORS
+const corsOptions = {
+    origin: 'http://localhost:4200',
+    optionsSuccessStatus: 200,
+}
 app.use(cors(corsOptions));
 
 // Middleware to handle JSON requests and URLendcoded requests
