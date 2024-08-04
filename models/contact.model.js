@@ -22,11 +22,6 @@ const ContactSchema = mongoose.Schema(
         required: false,
         },
 
-        mobile: {
-        type: Number,
-        required: false,
-        },
-
         address: {
             street: {
                 type: String,
@@ -51,7 +46,7 @@ const ContactSchema = mongoose.Schema(
         },
         color: {
             type: String,
-            required: false,
+            required: true,
         },
     },
     {
