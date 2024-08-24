@@ -1,25 +1,25 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const ContactSchema = mongoose.Schema(
     {
         firstName: {
-        type: String,
-        required: true,
+            type: String,
+            required: true,
         },
 
         lastName: {
-        type: String,
-        required: true,
+            type: String,
+            required: true,
         },
-    
+
         email: {
-        type: String,
-        required: true,
+            type: String,
+            required: true,
         },
-    
+
         phone: {
-        type: Number,
-        required: false,
+            type: Number,
+            required: false,
         },
 
         address: {
@@ -28,7 +28,7 @@ const ContactSchema = mongoose.Schema(
                 required: false,
             },
             streetNumber: {
-                type: Number,
+                type: String,
                 required: false,
             },
             city: {
@@ -51,7 +51,7 @@ const ContactSchema = mongoose.Schema(
     },
     {
         timestamps: true,
-    }
+    },
 );
 
 const Contact = mongoose.model("Contact", ContactSchema);

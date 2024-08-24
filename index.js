@@ -1,8 +1,8 @@
 require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
-const productRoutes = require("./routes/product.route.js");
 const contactRoutes = require("./routes/contact.route.js");
+const taskRoutes = require("./routes/task.route.js");
 const cors = require("cors");
 const app = express();
 
@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // definition of the routes
-app.use("/api/products", productRoutes);
+app.use("/api/tasks", taskRoutes);
 app.use("/api/contacts", contactRoutes);
 
 app.get("/", (req, res) => {
