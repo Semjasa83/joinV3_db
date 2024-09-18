@@ -33,12 +33,14 @@ if (!MONGODB_URI) {
   process.exit(1);
 }
 
+const port = 3000;
+
 mongoose
   .connect(MONGODB_URI)
   .then(() => {
-    console.log("Connected to the database!");
-    app.listen(3000, () => {
-      console.log("Server is running on port 3000");
+    console.log("Connected to the JoinV3 database!");
+    app.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
     });
   })
   .catch(() => {
